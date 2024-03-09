@@ -6,10 +6,10 @@
         'Desktop'
     )
     GUID                  = '9d5a5d77-7377-4306-ac5b-6c5e63d465c9'
-    Author                = 'marst'
-    CompanyName           = 'Unknown'
+    Author                = 'PSModule'
+    CompanyName           = 'PSModule'
     Copyright             = '(c) 2024 . All rights reserved.'
-    Description           = 'A workflow for the PSModule process, stitching together the Initialize, Build, Test, and Publish actions to create a complete CI/CD pipeline for PowerShell modules. The workflow is used by all PowerShell modules in the PSModule organization.'
+    Description           = 'Test module for PSModule framework'
     PowerShellVersion     = '7.0'
     ProcessorArchitecture = 'None'
     RequiredAssemblies    = 'assemblies\LsonLib.dll'
