@@ -59,7 +59,7 @@ Function Set-InternalPSModule {
         "Hello, World!"
     #>
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
-        'PSUseShouldProcessForStateChangingFunctions', '', Scope='Function',
+        'PSUseShouldProcessForStateChangingFunctions', '', Scope = 'Function',
         Justification = 'Reason for suppressing'
     )]
     [CmdletBinding()]
@@ -118,7 +118,7 @@ Function New-PSModule {
         "Hello, World!"
     #>
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
-        'PSUseShouldProcessForStateChangingFunctions', '', Scope='Function',
+        'PSUseShouldProcessForStateChangingFunctions', '', Scope = 'Function',
         Justification = 'Reason for suppressing'
     )]
     [CmdletBinding()]
@@ -146,7 +146,7 @@ Function Set-PSModule {
         "Hello, World!"
     #>
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
-        'PSUseShouldProcessForStateChangingFunctions', '', Scope='Function',
+        'PSUseShouldProcessForStateChangingFunctions', '', Scope = 'Function',
         Justification = 'Reason for suppressing'
     )]
     [CmdletBinding()]
@@ -198,8 +198,8 @@ Write-Verbose "[$scriptName] - [\finally.ps1] - Done"
 #endregion - From \finally.ps1
 
 $exports = @{
-    Alias = '*'
-    Cmdlet = ''
+    Alias    = '*'
+    Cmdlet   = ''
     Function = @(
         'Get-PSModule'
         'New-PSModule'
