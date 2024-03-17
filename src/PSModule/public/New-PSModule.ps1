@@ -1,4 +1,6 @@
-﻿Function New-PSModule {
+﻿#Requires -Module @{ModuleName='PSModule'; ModuleVersion='1.0'}
+
+function New-PSModule {
     <#
         .SYNOPSIS
         Performs tests on a module.
