@@ -1,4 +1,4 @@
-﻿#Requires -Module @{ModuleName='PSSemVer'; ModuleVersion='1.0'}
+﻿#Requires -Modules @{ModuleName='PSSemVer'; ModuleVersion='1.0'}
 
 function New-PSModule {
     <#
