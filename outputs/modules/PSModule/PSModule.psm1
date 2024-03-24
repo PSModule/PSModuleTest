@@ -18,6 +18,33 @@ Get-ChildItem -Path "$dataFolder" -Recurse -Force -Include '*.psd1' -ErrorAction
 Write-Verbose "[$scriptName] - [data] - Done"
 #endregion - Data import
 
+Write-Verbose '-------------------------------' -Verbose
+Write-Verbose '---  THIS IS AN INITIALIZER ---' -Verbose
+Write-Verbose '-------------------------------' -Verbose
+
+
+Class Function {
+    $Name
+    $Version
+
+    Function ([string] $Name, [string] $Version) {
+        $this.Name = $Name
+        $this.Version = $Version
+    }
+}
+
+Class PSModule {
+    $Name
+    $Version
+    $Functions
+
+    PSModule ([string] $Name, [string] $Version, [hashtable] $Functions) {
+        $this.Name = $Name
+        $this.Version = $Version
+        $this.Functions = $Functions
+    }
+}
+
 #region - From \private
 Write-Verbose "[$scriptName] - [\private] - Processing folder"
 
@@ -194,6 +221,46 @@ Write-Verbose "[$scriptName] - [\finally.ps1] - Importing"
 Write-Verbose '------------------------------' -Verbose
 Write-Verbose '---  THIS IS A LAST LOADER ---' -Verbose
 Write-Verbose '------------------------------' -Verbose
+
+# Define the types to export with type accelerators.
+$ExportableTypes = @(
+    [Function]
+    [PSModule]
+)
+
+# Get the internal TypeAccelerators class to use its static methods.
+$TypeAcceleratorsClass = [psobject].Assembly.GetType(
+    'System.Management.Automation.TypeAccelerators'
+)
+# Ensure none of the types would clobber an existing type accelerator.
+# If a type accelerator with the same name exists, throw an exception.
+$ExistingTypeAccelerators = $TypeAcceleratorsClass::Get
+foreach ($Type in $ExportableTypes) {
+    if ($Type.FullName -in $ExistingTypeAccelerators.Keys) {
+        $Message = @(
+            "Unable to register type accelerator '$($Type.FullName)'"
+            'Accelerator already exists.'
+        ) -join ' - '
+
+        throw [System.Management.Automation.ErrorRecord]::new(
+            [System.InvalidOperationException]::new($Message),
+            'TypeAcceleratorAlreadyExists',
+            [System.Management.Automation.ErrorCategory]::InvalidOperation,
+            $Type.FullName
+        )
+    }
+}
+# Add type accelerators for every exportable type.
+foreach ($Type in $ExportableTypes) {
+    $TypeAcceleratorsClass::Add($Type.FullName, $Type)
+}
+# Remove type accelerators when the module is removed.
+$MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {
+    foreach ($Type in $ExportableTypes) {
+        $TypeAcceleratorsClass::Remove($Type.FullName)
+    }
+}.GetNewClosure()
+
 Write-Verbose "[$scriptName] - [\finally.ps1] - Done"
 #endregion - From \finally.ps1
 
