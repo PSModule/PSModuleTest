@@ -1,4 +1,4 @@
-﻿Class PSModule {
+﻿class PSModule {
     [string] $Name
     [string] $Version
     [hashtable] $Functions

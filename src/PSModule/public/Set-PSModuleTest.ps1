@@ -1,5 +1,4 @@
-﻿#Requires -PSEdition Core
-function Set-PSModuleTest {
+﻿function Set-PSModuleTest {
     <#
         .SYNOPSIS
         Performs tests on a module.

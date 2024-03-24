@@ -22,8 +22,7 @@ Write-Verbose '-------------------------------' -Verbose
 Write-Verbose '---  THIS IS AN INITIALIZER ---' -Verbose
 Write-Verbose '-------------------------------' -Verbose
 
-
-Class Function {
+class Function {
     [string] $Name
     [string] $Version
 
@@ -33,7 +32,7 @@ Class Function {
     }
 }
 
-Class PSModule {
+class PSModule {
     [string] $Name
     [string] $Version
     [hashtable] $Functions

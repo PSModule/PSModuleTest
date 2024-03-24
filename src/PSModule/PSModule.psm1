@@ -2,7 +2,7 @@
 param()
 
 Write-Verbose 'Importing subcomponents'
-$Folders = 'init','classes', 'private', 'public'
+$Folders = 'init', 'classes', 'private', 'public'
 # Import everything in these folders
 Foreach ($Folder in $Folders) {
     $Root = Join-Path -Path $PSScriptRoot -ChildPath $Folder

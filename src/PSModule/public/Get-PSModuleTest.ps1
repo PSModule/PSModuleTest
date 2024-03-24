@@ -1,5 +1,4 @@
-﻿#Requires -Version 7.4
-#Requires -Modules Utilities
+﻿#Requires -Modules Utilities
 
 function Get-PSModuleTest {
     <#

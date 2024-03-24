@@ -1,4 +1,4 @@
-﻿Class Function {
+﻿class Function {
     [string] $Name
     [string] $Version
 
