@@ -2,7 +2,7 @@
 param()
 
 Write-Verbose 'Importing subcomponents'
-$Folders = 'classes', 'private', 'public'
+$Folders = 'init','classes', 'private', 'public'
 # Import everything in these folders
 Foreach ($Folder in $Folders) {
     $Root = Join-Path -Path $PSScriptRoot -ChildPath $Folder
@@ -19,6 +19,8 @@ Foreach ($Folder in $Folders) {
         }
     }
 }
+
+. "$PSScriptRoot\finally.ps1"
 
 $Param = @{
     Function = (Get-ChildItem -Path "$PSScriptRoot\public" -Include '*.ps1' -Recurse).BaseName
