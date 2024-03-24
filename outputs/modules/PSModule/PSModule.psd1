@@ -1,13 +1,16 @@
 ﻿@{
     RootModule            = 'PSModule.psm1'
     ModuleVersion         = '1.0.3'
-    CompatiblePSEditions  = 'Core'
+    CompatiblePSEditions  = @(
+        'Core'
+        'Desktop'
+    )
     GUID                  = '4cbf3147-1f7a-4e59-904a-a2698fa11e11'
     Author                = 'PSModule'
     CompanyName           = 'PSModule'
     Copyright             = '(c) 2024 PSModule. All rights reserved.'
     Description           = 'Process a module from source code to published module.'
-    PowerShellVersion     = '7.4'
+    PowerShellVersion     = '5.1'
     ProcessorArchitecture = 'None'
     RequiredModules       = @(
         @{
