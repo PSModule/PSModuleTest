@@ -24,21 +24,21 @@ Write-Verbose '-------------------------------' -Verbose
 
 
 Class Function {
-    $Name
-    $Version
+    [string] $Name
+    [string] $Version
 
-    Function ([string] $Name, [string] $Version) {
+    Function([string] $Name, [string] $Version) {
         $this.Name = $Name
         $this.Version = $Version
     }
 }
 
 Class PSModule {
-    $Name
-    $Version
-    $Functions
+    [string] $Name
+    [string] $Version
+    [hashtable] $Functions
 
-    PSModule ([string] $Name, [string] $Version, [hashtable] $Functions) {
+    PSModule([string] $Name, [string] $Version, [hashtable] $Functions) {
         $this.Name = $Name
         $this.Version = $Version
         $this.Functions = $Functions
