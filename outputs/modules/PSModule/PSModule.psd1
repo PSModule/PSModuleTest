@@ -22,16 +22,14 @@
     RequiredAssemblies    = 'assemblies/LsonLib.dll'
     ScriptsToProcess      = @(
         'scripts/loader.ps1'
-        'classes/Function.ps1'
-        'classes/PSModule.ps1'
     )
     TypesToProcess        = @(
-        'classes/DirectoryInfo.Types.ps1xml'
-        'classes/FileInfo.Types.ps1xml'
+        'types/DirectoryInfo.Types.ps1xml'
+        'types/FileInfo.Types.ps1xml'
     )
     FormatsToProcess      = @(
-        'classes/CultureInfo.Format.ps1xml'
-        'classes/Mygciview.Format.ps1xml'
+        'formats/CultureInfo.Format.ps1xml'
+        'formats/Mygciview.Format.ps1xml'
     )
     NestedModules         = @(
         'modules/OtherPSModule.psm1'
@@ -52,17 +50,14 @@
         'PSModule.psd1'
         'PSModule.psm1'
         'assemblies/LsonLib.dll'
-        'classes/CultureInfo.Format.ps1xml'
-        'classes/DirectoryInfo.Types.ps1xml'
-        'classes/FileInfo.Types.ps1xml'
-        'classes/Function.ps1'
-        'classes/Mygciview.Format.ps1xml'
-        'classes/PSModule.ps1'
+        'formats/CultureInfo.Format.ps1xml'
+        'formats/Mygciview.Format.ps1xml'
         'data/Config.psd1'
         'data/Settings.psd1'
-        'init/initializer.ps1'
         'modules/OtherPSModule.psm1'
         'scripts/loader.ps1'
+        'types/DirectoryInfo.Types.ps1xml'
+        'types/FileInfo.Types.ps1xml'
     )
     PrivateData           = @{
         PSData = @{
