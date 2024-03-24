@@ -1,7 +1,7 @@
 ﻿#Requires -Version 7.4
 #Requires -Modules Utilities
 
-function Get-PSModule {
+function Get-PSModuleTest {
     <#
         .SYNOPSIS
         Performs tests on a module.

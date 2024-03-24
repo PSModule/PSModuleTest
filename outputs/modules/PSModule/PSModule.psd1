@@ -35,10 +35,10 @@
         'modules/OtherPSModule.psm1'
     )
     FunctionsToExport     = @(
-        'Get-PSModule'
-        'New-PSModule'
-        'Set-PSModule'
-        'Test-PSModule'
+        'Get-PSModuleTest'
+        'New-PSModuleTest'
+        'Set-PSModuleTest'
+        'Test-PSModuleTest'
     )
     CmdletsToExport       = @()
     VariablesToExport     = @()

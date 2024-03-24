@@ -1,6 +1,5 @@
-﻿#Requires -Modules @{ModuleName='PSSemVer'; ModuleVersion='1.0'}
-
-function New-PSModule {
+﻿#Requires -PSEdition Core
+function Set-PSModuleTest {
     <#
         .SYNOPSIS
         Performs tests on a module.

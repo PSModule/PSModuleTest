@@ -57,7 +57,7 @@ Function Get-InternalPSModule {
         Performs tests on a module.
 
         .EXAMPLE
-        Test-PSModule -Name 'World'
+        Get-InternalPSModule -Name 'World'
 
         "Hello, World!"
     #>
@@ -81,7 +81,7 @@ Function Set-InternalPSModule {
         Performs tests on a module.
 
         .EXAMPLE
-        Test-PSModule -Name 'World'
+        Set-InternalPSModule -Name 'World'
 
         "Hello, World!"
     #>
@@ -107,16 +107,16 @@ Write-Verbose "[$scriptName] - [\private] - Done"
 #region - From \public
 Write-Verbose "[$scriptName] - [\public] - Processing folder"
 
-#region - From \public\Get-PSModule.ps1
-Write-Verbose "[$scriptName] - [\public\Get-PSModule.ps1] - Importing"
+#region - From \public\Get-PSModuleTest.ps1
+Write-Verbose "[$scriptName] - [\public\Get-PSModuleTest.ps1] - Importing"
 
-Function Get-PSModule {
+Function Get-PSModuleTest {
     <#
         .SYNOPSIS
         Performs tests on a module.
 
         .EXAMPLE
-        Test-PSModule -Name 'World'
+        Get-PSModuleTest -Name 'World'
 
         "Hello, World!"
     #>
@@ -129,46 +129,18 @@ Function Get-PSModule {
     Write-Output "Hello, $Name!"
 }
 
-Write-Verbose "[$scriptName] - [\public\Get-PSModule.ps1] - Done"
-#endregion - From \public\Get-PSModule.ps1
-#region - From \public\New-PSModule.ps1
-Write-Verbose "[$scriptName] - [\public\New-PSModule.ps1] - Importing"
+Write-Verbose "[$scriptName] - [\public\Get-PSModuleTest.ps1] - Done"
+#endregion - From \public\Get-PSModuleTest.ps1
+#region - From \public\New-PSModuleTest.ps1
+Write-Verbose "[$scriptName] - [\public\New-PSModuleTest.ps1] - Importing"
 
-Function New-PSModule {
+Function New-PSModuleTest {
     <#
         .SYNOPSIS
         Performs tests on a module.
 
         .EXAMPLE
-        Test-PSModule -Name 'World'
-
-        "Hello, World!"
-    #>
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
-        'PSUseShouldProcessForStateChangingFunctions', '', Scope = 'Function',
-        Justification = 'Reason for suppressing'
-    )]
-    [CmdletBinding()]
-    param (
-        # Name of the person to greet.
-        [Parameter(Mandatory)]
-        [string] $Name
-    )
-    Write-Output "Hello, $Name!"
-}
-
-Write-Verbose "[$scriptName] - [\public\New-PSModule.ps1] - Done"
-#endregion - From \public\New-PSModule.ps1
-#region - From \public\Set-PSModule.ps1
-Write-Verbose "[$scriptName] - [\public\Set-PSModule.ps1] - Importing"
-
-Function Set-PSModule {
-    <#
-        .SYNOPSIS
-        Performs tests on a module.
-
-        .EXAMPLE
-        Test-PSModule -Name 'World'
+        New-PSModuleTest -Name 'World'
 
         "Hello, World!"
     #>
@@ -185,18 +157,46 @@ Function Set-PSModule {
     Write-Output "Hello, $Name!"
 }
 
-Write-Verbose "[$scriptName] - [\public\Set-PSModule.ps1] - Done"
-#endregion - From \public\Set-PSModule.ps1
-#region - From \public\Test-PSModule.ps1
-Write-Verbose "[$scriptName] - [\public\Test-PSModule.ps1] - Importing"
+Write-Verbose "[$scriptName] - [\public\New-PSModuleTest.ps1] - Done"
+#endregion - From \public\New-PSModuleTest.ps1
+#region - From \public\Set-PSModuleTest.ps1
+Write-Verbose "[$scriptName] - [\public\Set-PSModuleTest.ps1] - Importing"
 
-Function Test-PSModule {
+Function Set-PSModuleTest {
     <#
         .SYNOPSIS
         Performs tests on a module.
 
         .EXAMPLE
-        Test-PSModule -Name 'World'
+        Set-PSModuleTest -Name 'World'
+
+        "Hello, World!"
+    #>
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        'PSUseShouldProcessForStateChangingFunctions', '', Scope = 'Function',
+        Justification = 'Reason for suppressing'
+    )]
+    [CmdletBinding()]
+    param (
+        # Name of the person to greet.
+        [Parameter(Mandatory)]
+        [string] $Name
+    )
+    Write-Output "Hello, $Name!"
+}
+
+Write-Verbose "[$scriptName] - [\public\Set-PSModuleTest.ps1] - Done"
+#endregion - From \public\Set-PSModuleTest.ps1
+#region - From \public\Test-PSModuleTest.ps1
+Write-Verbose "[$scriptName] - [\public\Test-PSModuleTest.ps1] - Importing"
+
+Function Test-PSModuleTest {
+    <#
+        .SYNOPSIS
+        Performs tests on a module.
+
+        .EXAMPLE
+        Test-PSModuleTest -Name 'World'
 
         "Hello, World!"
     #>
@@ -209,8 +209,8 @@ Function Test-PSModule {
     Write-Output "Hello, $Name!"
 }
 
-Write-Verbose "[$scriptName] - [\public\Test-PSModule.ps1] - Done"
-#endregion - From \public\Test-PSModule.ps1
+Write-Verbose "[$scriptName] - [\public\Test-PSModuleTest.ps1] - Done"
+#endregion - From \public\Test-PSModuleTest.ps1
 
 Write-Verbose "[$scriptName] - [\public] - Done"
 #endregion - From \public
@@ -268,10 +268,10 @@ $exports = @{
     Alias    = '*'
     Cmdlet   = ''
     Function = @(
-        'Get-PSModule'
-        'New-PSModule'
-        'Set-PSModule'
-        'Test-PSModule'
+        'Get-PSModuleTest'
+        'New-PSModuleTest'
+        'Set-PSModuleTest'
+        'Test-PSModuleTest'
     )
     Variable = ''
 }
