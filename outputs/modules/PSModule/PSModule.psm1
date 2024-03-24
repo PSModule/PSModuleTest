@@ -247,8 +247,7 @@ Write-Verbose '------------------------------' -Verbose
 
 # Define the types to export with type accelerators.
 $ExportableTypes = @(
-    [Function]
-    [PSModule]
+    [Book]
 )
 
 # Get the internal TypeAccelerators class to use its static methods.
