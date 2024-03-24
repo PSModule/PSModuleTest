@@ -1,19 +1,19 @@
 ---
-external help file: PSModule-help.xml
-Module Name: PSModule
+external help file: PSModuleTest-help.xml
+Module Name: PSModuleTest
 online version:
 schema: 2.0.0
 ---
 
-# Test-PSModule
+# Test-PSModuleTest
 
 ## SYNOPSIS
 Performs tests on a module.
 
 ## SYNTAX
 
-```
-Test-PSModule [-Name] <String> [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```powershell
+Test-PSModuleTest [-Name] <String> [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -22,7 +22,7 @@ Test-PSModule [-Name] <String> [-ProgressAction <ActionPreference>] [<CommonPara
 ## EXAMPLES
 
 ### EXAMPLE 1
-```
+```powershell
 Test-PSModule -Name 'World'
 ```
 

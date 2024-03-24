@@ -1,11 +1,11 @@
 ﻿@{
-    RootModule            = 'PSModule.psm1'
-    ModuleVersion         = '1.0.3'
+    RootModule            = 'PSModuleTest.psm1'
+    ModuleVersion         = '999.0.0'
     CompatiblePSEditions  = @(
         'Core'
         'Desktop'
     )
-    GUID                  = '4cbf3147-1f7a-4e59-904a-a2698fa11e11'
+    GUID                  = '20b37221-db1c-43db-9cca-f22b33123548'
     Author                = 'PSModule'
     CompanyName           = 'PSModule'
     Copyright             = '(c) 2024 PSModule. All rights reserved.'
@@ -14,15 +14,13 @@
     ProcessorArchitecture = 'None'
     RequiredModules       = @(
         @{
-            ModuleName    = 'PSSemVer'
             ModuleVersion = '1.0'
+            ModuleName    = 'PSSemVer'
         }
         'Utilities'
     )
     RequiredAssemblies    = 'assemblies/LsonLib.dll'
-    ScriptsToProcess      = @(
-        'scripts/loader.ps1'
-    )
+    ScriptsToProcess      = 'scripts/loader.ps1'
     TypesToProcess        = @(
         'types/DirectoryInfo.Types.ps1xml'
         'types/FileInfo.Types.ps1xml'
@@ -47,13 +45,13 @@
         'modules/OtherPSModule.psm1'
     )
     FileList              = @(
-        'PSModule.psd1'
-        'PSModule.psm1'
+        'PSModuleTest.psd1'
+        'PSModuleTest.psm1'
         'assemblies/LsonLib.dll'
-        'formats/CultureInfo.Format.ps1xml'
-        'formats/Mygciview.Format.ps1xml'
         'data/Config.psd1'
         'data/Settings.psd1'
+        'formats/CultureInfo.Format.ps1xml'
+        'formats/Mygciview.Format.ps1xml'
         'modules/OtherPSModule.psm1'
         'scripts/loader.ps1'
         'types/DirectoryInfo.Types.ps1xml'
@@ -65,6 +63,7 @@
                 'workflow'
                 'powershell'
                 'powershell-module'
+                'PSEdition_Desktop'
                 'PSEdition_Core'
             )
             LicenseUri = 'https://github.com/PSModule/Process-PSModule/blob/main/LICENSE'
@@ -73,3 +72,4 @@
         }
     }
 }
+

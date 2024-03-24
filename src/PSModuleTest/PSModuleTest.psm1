@@ -25,6 +25,7 @@ Foreach ($Folder in $Folders) {
 # Define the types to export with type accelerators.
 $ExportableTypes = @(
     [Book]
+    [BookList]
 )
 
 # Get the internal TypeAccelerators class to use its static methods.
